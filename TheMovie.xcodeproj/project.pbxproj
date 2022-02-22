@@ -16,6 +16,8 @@
 		E2AE8F0427C453E50099532A /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE8F0327C453E50099532A /* TableSection.swift */; };
 		E2AE8F0627C45E530099532A /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE8F0527C45E530099532A /* UIKitExtensions.swift */; };
 		E2AE8F0E27C4744D0099532A /* APIService-Info-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2AE8F0D27C4744D0099532A /* APIService-Info-Sample.plist */; };
+		E2AE8F1027C476E00099532A /* APIService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2AE8F0F27C476E00099532A /* APIService-Info.plist */; };
+		E2AE8F1427C4825B0099532A /* PopularMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE8F1327C4825B0099532A /* PopularMovieTableViewCell.swift */; };
 		E2B556D727C2F2DE006E3F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B556D627C2F2DE006E3F23 /* AppDelegate.swift */; };
 		E2B556D927C2F2DE006E3F23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B556D827C2F2DE006E3F23 /* SceneDelegate.swift */; };
 		E2B556DB27C2F2DE006E3F23 /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B556DA27C2F2DE006E3F23 /* PopularMoviesViewController.swift */; };
@@ -56,6 +58,8 @@
 		E2AE8F0327C453E50099532A /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		E2AE8F0527C45E530099532A /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		E2AE8F0D27C4744D0099532A /* APIService-Info-Sample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APIService-Info-Sample.plist"; sourceTree = "<group>"; };
+		E2AE8F0F27C476E00099532A /* APIService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APIService-Info.plist"; sourceTree = "<group>"; };
+		E2AE8F1327C4825B0099532A /* PopularMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewCell.swift; sourceTree = "<group>"; };
 		E2B556D327C2F2DE006E3F23 /* TheMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B556D627C2F2DE006E3F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2B556D827C2F2DE006E3F23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E2AE8F0327C453E50099532A /* TableSection.swift */,
+				E2AE8F1327C4825B0099532A /* PopularMovieTableViewCell.swift */,
 				E2AE8F0527C45E530099532A /* UIKitExtensions.swift */,
 			);
 			path = util;
@@ -155,6 +160,7 @@
 				E2B556DF27C2F2DF006E3F23 /* Assets.xcassets */,
 				E2B556E427C2F2DF006E3F23 /* Info.plist */,
 				E2AE8F0D27C4744D0099532A /* APIService-Info-Sample.plist */,
+				E2AE8F0F27C476E00099532A /* APIService-Info.plist */,
 			);
 			path = TheMovie;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2AE8F1027C476E00099532A /* APIService-Info.plist in Resources */,
 				E2B556E327C2F2DF006E3F23 /* LaunchScreen.storyboard in Resources */,
 				E2AE8F0E27C4744D0099532A /* APIService-Info-Sample.plist in Resources */,
 				E2B556E027C2F2DF006E3F23 /* Assets.xcassets in Resources */,
@@ -409,6 +416,7 @@
 				E2AE8EFE27C447610099532A /* APIError.swift in Sources */,
 				E2AE8EEE27C36F280099532A /* Coordinator.swift in Sources */,
 				E2AE8F0427C453E50099532A /* TableSection.swift in Sources */,
+				E2AE8F1427C4825B0099532A /* PopularMovieTableViewCell.swift in Sources */,
 				E2AE8F0627C45E530099532A /* UIKitExtensions.swift in Sources */,
 				E2B556D927C2F2DE006E3F23 /* SceneDelegate.swift in Sources */,
 				E2AE8F0127C4503C0099532A /* PopularMoviesAPIResponse.swift in Sources */,

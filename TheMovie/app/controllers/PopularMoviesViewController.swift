@@ -33,6 +33,11 @@ class PopularMoviesViewController: UIViewController, Storyboarded {
     
     private func setupView() {
         self.title = "Popular Movies"
+        setTableViewDelegates()
+        tableView.rowHeight = 300
+    }
+    
+    private func setTableViewDelegates() {
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -106,16 +111,14 @@ extension PopularMoviesViewController: UITableViewDataSource, UITableViewDelegat
             return UITableViewCell()
         }
         
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "popularMovieCell") as! PopularMovieTableViewCell
 
         switch section {
         case .list:
             let movie = movies[indexPath.row]
-            cell.textLabel?.text = movie.title
-            cell.detailTextLabel?.text = movie.overview
+            cell.setup(with: movie)
         case .loader:
-            cell.textLabel?.text = "Loading.."
-            cell.textLabel?.textColor = .systemBlue
+            break
         }
         
         return cell

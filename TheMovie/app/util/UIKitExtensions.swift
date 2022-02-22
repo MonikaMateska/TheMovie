@@ -44,3 +44,23 @@ extension UITableView {
     }
     
 }
+
+extension UIImageView {
+    
+    func imageFromServer(imagePath: String, placeHolder: UIImage?) {
+        DispatchQueue.main.async { [weak self] in
+            self?.image = placeHolder
+        }
+        
+        Task {
+            do {
+                let loadedImage = try await APIService.shared.fetchImage(path: imagePath)
+                DispatchQueue.main.async { [weak self] in
+                    self?.image = loadedImage
+                }
+            } catch {
+                print("Failed to load an image from the server")
+            }
+        }
+    }
+}
