@@ -11,13 +11,22 @@ import Foundation
 struct PopularMovieModel: Identifiable, Codable {
     let id: Int
     let title: String
-    let posterUrl: String?
+    let posterPath: String?
     let overview: String?
     
+    var posterUrl: URL? {
+        guard let posterPath = posterPath else {
+            return nil
+        }
+
+        let urlPath = "\(APIService.shared.basePath)/\(posterPath)"
+        return URL(string: urlPath)
+    }
+    
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case title = "title"
-        case posterUrl = "poster_path"
-        case overview = "overview"
+        case id
+        case title
+        case posterPath = "poster_path"
+        case overview
     }
 }
