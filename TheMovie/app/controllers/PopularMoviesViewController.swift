@@ -55,8 +55,15 @@ class PopularMoviesViewController: UIViewController, Storyboarded {
     }
     
     private func handleError(_ error: Error) {
+        var message = "Could not load the movies"
+        
+        if let error = error as? APIError,
+           case .cannotReadAPIKey = error {
+            message = "Please provide valid API key"
+        }
+        
         let alert = UIAlertController(title: "Error",
-                                      message: "Could not load the movies",
+                                      message: message,
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))

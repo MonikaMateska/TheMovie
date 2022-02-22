@@ -13,8 +13,11 @@ class APIService {
     let basePath = "https://api.themoviedb.org/3"
     private let popularMoviesPath = "movie/top_rated"
     
-    private let apiKey = "" //TODO: read hashed api key
-    
+    /// Asynchronous fetches the popular movies.
+    ///
+    /// - Parameters:
+    ///   - page, the current page.
+    /// - Returns, list of PopularMovieModel or throws an error.
     func fetchPopularMovies(page: Int) async throws -> [PopularMovieModel] {
         let url = try generatePopularMoviesUrl(page: page)
         
@@ -32,8 +35,13 @@ class APIService {
         return popularMoviesReponse.movies
     }
     
-    func generatePopularMoviesUrl(page: Int) throws -> URL {
+    // MARK: - private
+    
+    private func generatePopularMoviesUrl(page: Int) throws -> URL {
         var components = URLComponents(string: "\(basePath)/\(popularMoviesPath)")!
+        
+        let apiKey = try readAPIKey()
+        
         components.queryItems = [
         URLQueryItem(name: "api_key", value: apiKey),
         URLQueryItem(name: "page", value: "\(page)")
@@ -44,5 +52,18 @@ class APIService {
         }
 
         return url
+    }
+    
+    private func readAPIKey() throws -> String {
+        guard let filePath = Bundle.main.path(forResource: "APIService-Info", ofType: "plist") else {
+            throw APIError.cannotReadAPIKey
+        }
+        
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "API_KEY") as? String else {
+            throw APIError.cannotReadAPIKey
+        }
+        
+        return value
     }
 }

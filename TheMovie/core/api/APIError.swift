@@ -13,4 +13,5 @@ enum APIError: Error {
     case serverEror
     case failed(error: Error)
     case unknownError
+    case cannotReadAPIKey
 }

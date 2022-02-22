@@ -149,8 +149,8 @@
 				E2B5571327C2F985006E3F23 /* shared */,
 				E2B5570727C2F389006E3F23 /* core */,
 				E2B5571227C2F97D006E3F23 /* app */,
-				E2B556DF27C2F2DF006E3F23 /* Assets.xcassets */,
 				E2B556E127C2F2DF006E3F23 /* LaunchScreen.storyboard */,
+				E2B556DF27C2F2DF006E3F23 /* Assets.xcassets */,
 				E2B556E427C2F2DF006E3F23 /* Info.plist */,
 			);
 			path = TheMovie;
@@ -252,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2B556FD27C2F2E0006E3F23 /* Build configuration list for PBXNativeTarget "TheMovie" */;
 			buildPhases = (
+				E2AE8F0C27C471730099532A /* ShellScript */,
 				E2B556CF27C2F2DE006E3F23 /* Sources */,
 				E2B556D027C2F2DE006E3F23 /* Frameworks */,
 				E2B556D127C2F2DE006E3F23 /* Resources */,
@@ -370,6 +371,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E2AE8F0C27C471730099532A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "CONFIG_FILE_BASE_NAME=\"APIService-Info\"\n\nCONFIG_FILE_NAME=${CONFIG_FILE_BASE_NAME}.plist\nSAMPLE_CONFIG_FILE_NAME=${CONFIG_FILE_BASE_NAME}-Sample.plist\n\nCONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/$CONFIG_FILE_NAME\nSAMPLE_CONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/$SAMPLE_CONFIG_FILE_NAME\n\nif [ -f \"$CONFIG_FILE_PATH\" ]; then\n  echo \"$CONFIG_FILE_PATH exists.\"\nelse\n  echo \"$CONFIG_FILE_PATH does not exist, copying sample\"\n  cp -v \"${SAMPLE_CONFIG_FILE_PATH}\" \"${CONFIG_FILE_PATH}\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2B556CF27C2F2DE006E3F23 /* Sources */ = {
