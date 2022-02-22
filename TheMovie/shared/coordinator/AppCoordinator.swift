@@ -11,6 +11,8 @@ class AppCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
+    private var localStorage: LocalStorage = UserDefaultsStorage()
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -18,6 +20,7 @@ class AppCoordinator: Coordinator {
     func start() {
         let vc = PopularMoviesViewController.instantiate()
         vc.coordinator = self
+        vc.localStorage = localStorage
         navigationController.pushViewController(vc, animated: false)
     }
     
@@ -25,6 +28,7 @@ class AppCoordinator: Coordinator {
         let vc = MovieDetailsViewController.instantiate()
         vc.fetchDetails(of: movie)
         vc.coordinator = self
+        vc.localStorage = localStorage
         navigationController.pushViewController(vc, animated: true)
     }
 }

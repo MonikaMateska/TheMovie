@@ -14,9 +14,25 @@ class PopularMovieTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var overview: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var favouriteButton: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    func setup(with movie: PopularMovieModel) {
+    private var localStorage: LocalStorage?
+    private var movieId: Int?
+    
+    var localMovieIsInFavourites: Bool {
+        guard let localStorage = localStorage,
+              let movieId = movieId else {
+            return false
+        }
+        
+        return localStorage.isMovieInFavourites(id: movieId)
+    }
+    
+    func setup(with movie: PopularMovieModel, localStorage: LocalStorage?) {
+        self.localStorage = localStorage
+        self.movieId = movie.id
+        
         movieTitle.text = movie.title
         releaseDate.text = movie.formattedReleaseDate
         overview.text = movie.overview
@@ -25,6 +41,14 @@ class PopularMovieTableViewCell: UITableViewCell {
         moviePoster.clipsToBounds = true
         moviePoster.layer.masksToBounds = true
         activityIndicator.startAnimating()
+        
+        if localMovieIsInFavourites {
+            favouriteButton.image = UIImage(systemName: "heart.fill")
+        }
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(favouriteTapped))
+        favouriteButton.isUserInteractionEnabled = true
+        favouriteButton.addGestureRecognizer(tapGestureRecognizer)
         
         if let posterURL = movie.posterUrl {
             moviePoster.imageFromServer(url: posterURL,
@@ -42,6 +66,18 @@ class PopularMovieTableViewCell: UITableViewCell {
         activityIndicator.stopAnimating()
     }
     
-    
-    
+    @objc func favouriteTapped() {
+        guard let localStorage = localStorage,
+              let movieId = movieId else {
+            return
+        }
+        
+        if localMovieIsInFavourites {
+            localStorage.removeMovieFromFavourites(id: movieId)
+            favouriteButton.image = UIImage(systemName: "heart")
+        } else {
+            localStorage.addMovieToFavourites(id: movieId)
+            favouriteButton.image = UIImage(systemName: "heart.fill")
+        }
+    }
 }

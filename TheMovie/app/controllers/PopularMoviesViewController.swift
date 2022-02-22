@@ -10,6 +10,7 @@ import UIKit
 class PopularMoviesViewController: UIViewController, Storyboarded {
     
     weak var coordinator: AppCoordinator?
+    var localStorage: LocalStorage?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -116,7 +117,7 @@ extension PopularMoviesViewController: UITableViewDataSource, UITableViewDelegat
         switch section {
         case .list:
             let movie = movies[indexPath.row]
-            cell.setup(with: movie)
+            cell.setup(with: movie, localStorage: localStorage)
         case .loader:
             break
         }

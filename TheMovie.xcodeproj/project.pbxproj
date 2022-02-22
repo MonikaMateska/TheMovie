@@ -30,6 +30,8 @@
 		E2B556FA27C2F2E0006E3F23 /* TheMovieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B556F927C2F2E0006E3F23 /* TheMovieUITestsLaunchTests.swift */; };
 		E2B5571827C2FB5F006E3F23 /* PopularMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5571727C2FB5F006E3F23 /* PopularMovie.swift */; };
 		E2B5571A27C2FC11006E3F23 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5571927C2FC11006E3F23 /* APIService.swift */; };
+		E2CE12B127C5913900610C30 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CE12B027C5913900610C30 /* LocalStorage.swift */; };
+		E2CE12B327C5923000610C30 /* LocalStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CE12B227C5923000610C30 /* LocalStorageImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		E2B556F927C2F2E0006E3F23 /* TheMovieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E2B5571727C2FB5F006E3F23 /* PopularMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovie.swift; sourceTree = "<group>"; };
 		E2B5571927C2FC11006E3F23 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E2CE12B027C5913900610C30 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		E2CE12B227C5923000610C30 /* LocalStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 		E2B5570827C2F395006E3F23 /* storage */ = {
 			isa = PBXGroup;
 			children = (
+				E2CE12B227C5923000610C30 /* LocalStorageImpl.swift */,
+				E2CE12B027C5913900610C30 /* LocalStorage.swift */,
 				E280081B27C5644200F0715C /* ImageCache.swift */,
 			);
 			path = storage;
@@ -413,6 +419,7 @@
 			files = (
 				E280081C27C5644200F0715C /* ImageCache.swift in Sources */,
 				E2AE8EF227C372400099532A /* AppCoordinator.swift in Sources */,
+				E2CE12B327C5923000610C30 /* LocalStorageImpl.swift in Sources */,
 				E2AE8EE827C36A850099532A /* MovieDetailsViewController.swift in Sources */,
 				E2B5571827C2FB5F006E3F23 /* PopularMovie.swift in Sources */,
 				E2B556DB27C2F2DE006E3F23 /* PopularMoviesViewController.swift in Sources */,
@@ -424,6 +431,7 @@
 				E2AE8F0627C45E530099532A /* UIKitExtensions.swift in Sources */,
 				E2B556D927C2F2DE006E3F23 /* SceneDelegate.swift in Sources */,
 				E2AE8F0127C4503C0099532A /* PopularMoviesAPIResponse.swift in Sources */,
+				E2CE12B127C5913900610C30 /* LocalStorage.swift in Sources */,
 				E2AE8EF027C36F9A0099532A /* Storyboarded.swift in Sources */,
 				E2B5571A27C2FC11006E3F23 /* APIService.swift in Sources */,
 			);
