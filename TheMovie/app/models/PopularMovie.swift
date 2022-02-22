@@ -21,6 +21,20 @@ struct PopularMovieModel: Identifiable, Codable {
         return components.url
     }
     
+    var formattedReleaseDate: String {
+        let inputDateFormatter = DateFormatter()
+        inputDateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let outputDateFormatter = DateFormatter()
+        outputDateFormatter.dateFormat = "dd MMM yyyy"
+        
+        if let date = inputDateFormatter.date(from: releaseDate) {
+            return outputDateFormatter.string(from: date)
+        } else {
+            return releaseDate
+        }
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case title

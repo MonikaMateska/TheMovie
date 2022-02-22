@@ -18,7 +18,7 @@ class PopularMovieTableViewCell: UITableViewCell {
     
     func setup(with movie: PopularMovieModel) {
         movieTitle.text = movie.title
-        releaseDate.text = formatDate(movie.releaseDate)
+        releaseDate.text = movie.formattedReleaseDate
         overview.text = movie.overview
         
         moviePoster.layer.cornerRadius = 20
@@ -35,20 +35,6 @@ class PopularMovieTableViewCell: UITableViewCell {
         } else {
             stopActivityIndicator()
             moviePoster.image = UIImage(named: "placeholder")
-        }
-    }
-    
-    func formatDate(_ inputDate: String) -> String {
-        let inputDateFormatter = DateFormatter()
-        inputDateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        let outputDateFormatter = DateFormatter()
-        outputDateFormatter.dateFormat = "dd MMM yyyy"
-        
-        if let date = inputDateFormatter.date(from: inputDate) {
-            return outputDateFormatter.string(from: date)
-        } else {
-            return inputDate
         }
     }
     
