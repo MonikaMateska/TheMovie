@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E280081C27C5644200F0715C /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280081B27C5644200F0715C /* ImageCache.swift */; };
 		E2AE8EE827C36A850099532A /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE8EE727C36A850099532A /* MovieDetailsViewController.swift */; };
 		E2AE8EEE27C36F280099532A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE8EED27C36F280099532A /* Coordinator.swift */; };
 		E2AE8EF027C36F9A0099532A /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE8EEF27C36F9A0099532A /* Storyboarded.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E280081B27C5644200F0715C /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		E2AE8EE727C36A850099532A /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		E2AE8EED27C36F280099532A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E2AE8EEF27C36F9A0099532A /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		E2B5570827C2F395006E3F23 /* storage */ = {
 			isa = PBXGroup;
 			children = (
+				E280081B27C5644200F0715C /* ImageCache.swift */,
 			);
 			path = storage;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E280081C27C5644200F0715C /* ImageCache.swift in Sources */,
 				E2AE8EF227C372400099532A /* AppCoordinator.swift in Sources */,
 				E2AE8EE827C36A850099532A /* MovieDetailsViewController.swift in Sources */,
 				E2B5571827C2FB5F006E3F23 /* PopularMovie.swift in Sources */,

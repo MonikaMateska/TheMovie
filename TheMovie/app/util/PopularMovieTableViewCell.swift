@@ -26,8 +26,8 @@ class PopularMovieTableViewCell: UITableViewCell {
         moviePoster.layer.masksToBounds = true
         activityIndicator.startAnimating()
         
-        if let posterPath = movie.posterPath {
-            moviePoster.imageFromServer(imagePath: posterPath,
+        if let posterURL = movie.posterUrl {
+            moviePoster.imageFromServer(url: posterURL,
                                         placeHolder: UIImage(named: "placeholder"),
                                         completionHandler: { [weak self] in
                 self?.stopActivityIndicator()

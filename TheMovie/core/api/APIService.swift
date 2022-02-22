@@ -11,8 +11,8 @@ import UIKit
 class APIService {
     static let shared = APIService()
     
-    let basePath = "https://api.themoviedb.org/3"
-    let posterBasePath = "https://image.tmdb.org/t/p/w500"
+    static let basePath = "https://api.themoviedb.org/3"
+    static let posterBasePath = "https://image.tmdb.org/t/p/w500"
     private let popularMoviesPath = "movie/top_rated"
     
     /// Asynchronous fetches the popular movies.
@@ -40,11 +40,9 @@ class APIService {
     /// Asynchronous fetches image.
     ///
     /// - Parameters:
-    ///   - path, the image path.
+    ///   - url, the image URL.
     /// - Returns, UIImage or throws an error.
-    func fetchImage(path: String) async throws -> UIImage {
-        let url = try generateImageUrl(path: path)
-        
+    func fetchImage(url: URL) async throws -> UIImage {
         let (imageData, response) = try await URLSession.shared.data(from: url)
             
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
@@ -61,7 +59,7 @@ class APIService {
     // MARK: - private
     
     private func generatePopularMoviesUrl(page: Int) throws -> URL {
-        var components = URLComponents(string: "\(basePath)/\(popularMoviesPath)")!
+        var components = URLComponents(string: "\(APIService.basePath)/\(popularMoviesPath)")!
         
         let apiKey = try readAPIKey()
         
@@ -70,16 +68,6 @@ class APIService {
         URLQueryItem(name: "page", value: "\(page)")
         ]
 
-        guard let url = components.url else {
-            throw APIError.invalidUrl
-        }
-
-        return url
-    }
-    
-    private func generateImageUrl(path: String) throws -> URL {
-        let components = URLComponents(string: "\(posterBasePath)\(path)")!
-        
         guard let url = components.url else {
             throw APIError.invalidUrl
         }

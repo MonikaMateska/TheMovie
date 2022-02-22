@@ -15,6 +15,12 @@ struct PopularMovieModel: Identifiable, Codable {
     let overview: String?
     let releaseDate: String
     
+    var posterUrl: URL? {
+        guard let posterPath = posterPath else { return nil }
+        let components = URLComponents(string: "\(APIService.posterBasePath)\(posterPath)")!
+        return components.url
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case title
