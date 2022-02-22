@@ -21,8 +21,9 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func movieDetails() {
+    func movieDetails(of movie: PopularMovieModel) {
         let vc = MovieDetailsViewController.instantiate()
+        vc.fetchDetails(of: movie)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

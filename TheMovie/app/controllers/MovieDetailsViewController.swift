@@ -14,4 +14,7 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    func fetchDetails(of movie: PopularMovieModel) {
+    }
 }

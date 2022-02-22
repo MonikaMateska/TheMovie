@@ -137,6 +137,12 @@ extension PopularMoviesViewController: UITableViewDataSource, UITableViewDelegat
           }
       }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMovie = movies[indexPath.row]
+        
+        coordinator?.movieDetails(of: selectedMovie)
+    }
+    
       private func hideBottomLoader() {
           DispatchQueue.main.async {
               let lastListIndexPath = IndexPath(row: self.movies.count - 1,

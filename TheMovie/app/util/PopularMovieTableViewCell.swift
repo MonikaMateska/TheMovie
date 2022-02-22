@@ -14,6 +14,7 @@ class PopularMovieTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var overview: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     func setup(with movie: PopularMovieModel) {
         movieTitle.text = movie.title
@@ -23,11 +24,16 @@ class PopularMovieTableViewCell: UITableViewCell {
         moviePoster.layer.cornerRadius = 20
         moviePoster.clipsToBounds = true
         moviePoster.layer.masksToBounds = true
+        activityIndicator.startAnimating()
         
         if let posterPath = movie.posterPath {
             moviePoster.imageFromServer(imagePath: posterPath,
-                                        placeHolder: UIImage(named: "placeholder"))
+                                        placeHolder: UIImage(named: "placeholder"),
+                                        completionHandler: { [weak self] in
+                self?.stopActivityIndicator()
+            })
         } else {
+            stopActivityIndicator()
             moviePoster.image = UIImage(named: "placeholder")
         }
     }
@@ -45,5 +51,11 @@ class PopularMovieTableViewCell: UITableViewCell {
             return inputDate
         }
     }
+    
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
+    }
+    
+    
     
 }

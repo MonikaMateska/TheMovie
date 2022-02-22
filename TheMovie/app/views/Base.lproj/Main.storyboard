@@ -61,9 +61,14 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cck-1J-NGW">
+                                                    <rect key="frame" x="20" y="21" width="173" height="218"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tey-Yr-0hX" firstAttribute="top" secondItem="c4L-mJ-Ybj" secondAttribute="bottom" constant="8" id="73T-D9-2nI"/>
+                                                <constraint firstItem="cck-1J-NGW" firstAttribute="trailing" secondItem="lw0-ue-Aof" secondAttribute="trailing" id="8Dy-7z-cJj"/>
+                                                <constraint firstItem="cck-1J-NGW" firstAttribute="leading" secondItem="lw0-ue-Aof" secondAttribute="leading" id="91Z-bg-Ot9"/>
                                                 <constraint firstItem="lw0-ue-Aof" firstAttribute="leading" secondItem="yOs-rS-Oje" secondAttribute="leadingMargin" id="AHE-g7-bBD"/>
                                                 <constraint firstItem="tey-Yr-0hX" firstAttribute="trailing" secondItem="c4L-mJ-Ybj" secondAttribute="trailing" id="Atu-KV-iDf"/>
                                                 <constraint firstItem="9h9-dn-eKu" firstAttribute="trailing" secondItem="lw0-ue-Aof" secondAttribute="trailing" constant="-12" id="DP1-7S-sCU"/>
@@ -71,14 +76,17 @@
                                                 <constraint firstItem="lw0-ue-Aof" firstAttribute="top" secondItem="yOs-rS-Oje" secondAttribute="topMargin" constant="10" id="Nnb-FS-lsH"/>
                                                 <constraint firstItem="tey-Yr-0hX" firstAttribute="leading" secondItem="c4L-mJ-Ybj" secondAttribute="leading" id="OEh-jm-q2K"/>
                                                 <constraint firstItem="c4L-mJ-Ybj" firstAttribute="top" secondItem="yOs-rS-Oje" secondAttribute="topMargin" id="Rlu-mV-E1r"/>
+                                                <constraint firstItem="cck-1J-NGW" firstAttribute="top" secondItem="lw0-ue-Aof" secondAttribute="top" id="Ug7-xN-a7u"/>
                                                 <constraint firstItem="tey-Yr-0hX" firstAttribute="leading" secondItem="lw0-ue-Aof" secondAttribute="trailing" constant="8" id="Vp7-Ig-Mmh"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="c4L-mJ-Ybj" secondAttribute="trailing" constant="-8" id="bLD-dJ-nzP"/>
                                                 <constraint firstItem="9h9-dn-eKu" firstAttribute="top" secondItem="lw0-ue-Aof" secondAttribute="bottom" constant="8" id="fxK-gD-3c9"/>
+                                                <constraint firstItem="cck-1J-NGW" firstAttribute="bottom" secondItem="lw0-ue-Aof" secondAttribute="bottom" id="jPW-Tn-cMX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lw0-ue-Aof" secondAttribute="bottom" constant="33" id="lzk-WK-Zka"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="tey-Yr-0hX" secondAttribute="bottom" constant="15" id="rbU-D3-GP0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="cck-1J-NGW" id="1ke-Wl-TE9"/>
                                             <outlet property="moviePoster" destination="lw0-ue-Aof" id="ul6-Im-ASx"/>
                                             <outlet property="movieTitle" destination="c4L-mJ-Ybj" id="Kvq-Vq-2QN"/>
                                             <outlet property="overview" destination="tey-Yr-0hX" id="Eqa-xD-nBV"/>
@@ -119,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljj-Jh-0dF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="-231"/>
+            <point key="canvasLocation" x="1121.7391304347827" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>

@@ -47,10 +47,14 @@ extension UITableView {
 
 extension UIImageView {
     
-    func imageFromServer(imagePath: String, placeHolder: UIImage?) {
+    func imageFromServer(imagePath: String,
+                         placeHolder: UIImage?,
+                         completionHandler: @escaping() -> ()) {
         DispatchQueue.main.async { [weak self] in
             self?.image = placeHolder
         }
+        
+        
         
         Task {
             do {
@@ -58,8 +62,10 @@ extension UIImageView {
                 DispatchQueue.main.async { [weak self] in
                     self?.image = loadedImage
                 }
+                completionHandler()
             } catch {
                 print("Failed to load an image from the server")
+                completionHandler()
             }
         }
     }
