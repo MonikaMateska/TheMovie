@@ -47,6 +47,7 @@ class PopularMoviesViewController: UIViewController, Storyboarded {
         Task {
             do {
                 let popularMovies = try await APIService.shared.fetchPopularMovies(page: currentPage)
+                currentPage += 1
                 handleLoadedMovies(popularMovies)
                 completionHandler(true)
             } catch {
